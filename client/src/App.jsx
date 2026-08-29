@@ -8,7 +8,7 @@ import DemoSiteDetailPage from './components/DemoSiteDetailPage';
 import RequestDemoModal from './components/RequestDemoModal';
 import FeedbackModal from './components/FeedbackModal';
 import { Loader2, Search, Database, Globe, ChevronLeft, ChevronRight, X, ExternalLink, Copy, Check, Download } from 'lucide-react';
-import logoImg from './assets/metablock_logo_with_icon.avif';
+import logoImg from './assets/smartsoft.png';
 
 const API_BASE = import.meta.env.VITE_API_URL || 'http://localhost:5050/api';
 const SERVER_BASE = API_BASE.replace(/\/api\/?$/, '');
@@ -492,7 +492,7 @@ function App() {
                 try {
                   new Notification('Problem Solved! 🛠️', {
                     body: `"${item.siteTitle}" is now live! The admin has resolved the issue.`,
-                    icon: '/favicon.svg',
+                    icon: '/favicon.png',
                   });
                 } catch (err) {
                   console.error('Browser Notification trigger error:', err);
@@ -589,7 +589,7 @@ function App() {
                 try {
                   new Notification('Demo Request Live! 🚀', {
                     body: `Your requested demo "${item.demoName}" is now live.`,
-                    icon: '/favicon.svg',
+                    icon: '/favicon.png',
                   });
                 } catch (err) {
                   console.error('Browser Notification trigger error:', err);

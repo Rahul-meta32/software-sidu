@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { Search, ChevronDown, ChevronRight, Layout, Bell, LogOut } from 'lucide-react';
-import logoImg from '../assets/metablock_logo_with_icon.avif';
+import logoImg from '../assets/smartsoft.png';
 
 const Header = ({ 
   user,
@@ -114,7 +114,7 @@ const Header = ({
           }} style={{ display: 'flex', alignItems: 'center' }}>
             <img 
               src={logoImg} 
-              alt="MetaBlock" 
+              alt="SmartSoft" 
               style={{ height: '48px', width: 'auto', objectFit: 'contain', display: 'block' }} 
             />
           </a>

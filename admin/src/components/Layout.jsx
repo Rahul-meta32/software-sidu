@@ -2,6 +2,7 @@ import React, { useState, useEffect, useRef } from 'react';
 import { NavLink, Outlet, useNavigate } from 'react-router-dom';
 import { authService } from '../api/demoSiteService';
 import { db } from '../api/firebase';
+import { doc, setDoc, collection, query, where, onSnapshot } from 'firebase/firestore';
 import { LayoutDashboard, PlusCircle, LogOut, Layers, Tag, Server, HelpCircle, Bell, Grid, Image, UserPlus, Users, Star, Layout as LayoutIcon, ClipboardList, Sliders, Settings as SettingsIcon, Code } from 'lucide-react';
 import logoImg from '../assets/smartsoft.png';
 

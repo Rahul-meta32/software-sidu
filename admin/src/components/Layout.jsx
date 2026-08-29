@@ -2,9 +2,8 @@ import React, { useState, useEffect, useRef } from 'react';
 import { NavLink, Outlet, useNavigate } from 'react-router-dom';
 import { authService } from '../api/demoSiteService';
 import { db } from '../api/firebase';
-import { collection, query, where, onSnapshot, doc, setDoc } from 'firebase/firestore';
 import { LayoutDashboard, PlusCircle, LogOut, Layers, Tag, Server, HelpCircle, Bell, Grid, Image, UserPlus, Users, Star, Layout as LayoutIcon, ClipboardList, Sliders, Settings as SettingsIcon, Code } from 'lucide-react';
-import logoImg from '../assets/metablock_logo_with_icon.avif';
+import logoImg from '../assets/smartsoft.png';
 
 const isNotificationRelevant = (data, role, email) => {
   if (data.type === 'password_request') {
@@ -282,8 +281,8 @@ const Layout = () => {
           <NavLink to="/" className="sidebar-logo" style={{ display: 'flex', alignItems: 'center', justifyContent: 'flex-start', padding: '10px 8px' }}>
             <img
               src={logoImg}
-              alt="MetaBlock"
-              style={{ height: '36px', width: 'auto', objectFit: 'contain', display: 'block' }}
+              alt="SmartSoft Technologies"
+              style={{ height: '40px', maxWidth: '180px', width: 'auto', objectFit: 'contain', display: 'block' }}
             />
           </NavLink>
 

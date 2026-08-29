@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { authService } from '../api/demoSiteService';
 import { Key, Mail, Loader2 } from 'lucide-react';
-import logoImg from '../assets/metablock_logo_with_icon.avif';
+import logoImg from '../assets/smartsoft.png';
 
 const Login = () => {
   const [email, setEmail] = useState('');
@@ -69,8 +69,8 @@ const Login = () => {
           <div style={{ display: 'flex', justifyContent: 'center', marginBottom: '20px' }}>
             <img 
               src={logoImg} 
-              alt="MetaBlock" 
-              style={{ height: '48px', width: 'auto', objectFit: 'contain', display: 'block' }} 
+              alt="SmartSoft Technologies" 
+              style={{ height: '56px', width: 'auto', maxWidth: '240px', objectFit: 'contain', display: 'block' }} 
             />
           </div>
           <p style={{ color: 'var(--text-muted)', fontSize: '0.85rem' }}>

@@ -4,9 +4,15 @@ const { getFirestore } = require('firebase-admin/firestore');
 let serviceAccount;
 
 if (process.env.FIREBASE_PROJECT_ID && process.env.FIREBASE_PRIVATE_KEY && process.env.FIREBASE_CLIENT_EMAIL) {
+  let rawKey = process.env.FIREBASE_PRIVATE_KEY || '';
+  if (rawKey.startsWith('"') && rawKey.endsWith('"')) {
+    rawKey = rawKey.slice(1, -1);
+  }
+  const formattedKey = rawKey.replace(/\\n/g, '\n');
+
   serviceAccount = {
     projectId: process.env.FIREBASE_PROJECT_ID,
-    privateKey: process.env.FIREBASE_PRIVATE_KEY.replace(/\\n/g, '\n'),
+    privateKey: formattedKey,
     clientEmail: process.env.FIREBASE_CLIENT_EMAIL,
   };
 } else {

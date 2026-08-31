@@ -433,7 +433,7 @@ const AllSites = () => {
                         </td>
                         <td>
                           <span style={{ color: site.developer ? 'var(--text-main)' : 'var(--text-muted)', fontWeight: 600 }}>
-                            {site.developer || 'MetaBlock'}
+                            {site.developer || 'SmartSoft'}
                           </span>
                         </td>
                         <td>

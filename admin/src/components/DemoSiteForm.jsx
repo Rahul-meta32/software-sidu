@@ -236,7 +236,7 @@ const DemoSiteForm = ({ site, onClose, onRefresh }) => {
               id="developer"
               value={developer}
               onChange={(e) => setDeveloper(e.target.value)}
-              placeholder="Who is taking this site live (defaults to MetaBlock)"
+              placeholder="Who is taking this site live (defaults to SmartSoft)"
               disabled={isLoading}
             />
           </div>

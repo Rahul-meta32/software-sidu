@@ -80,7 +80,7 @@ const HeroCardStack = ({ sections, onCardClick }) => {
           ? (imgPath.startsWith('http') ? imgPath : `${SERVER_BASE}/${imgPath}`)
           : null;
         const title = item?.title || fallback[idx].title;
-        const sub   = item?.title ? 'MetaBlock Template' : fallback[idx].sub;
+        const sub   = item?.title ? 'SmartSoft Template' : fallback[idx].sub;
 
         return (
           <div
@@ -962,11 +962,11 @@ function App() {
           position: 'relative',
           zIndex: 1
         }}>
-          {/* Custom MetaBlock Logo Image */}
+          {/* Custom SmartSoft Logo Image */}
           <div style={{ display: 'flex', justifyContent: 'center', marginBottom: '20px' }}>
             <img 
               src={logoImg} 
-              alt="MetaBlock" 
+              alt="SmartSoft" 
               style={{ height: '48px', width: 'auto', objectFit: 'contain', display: 'block' }} 
             />
           </div>
@@ -1015,7 +1015,7 @@ function App() {
               </label>
               <input
                 type="text"
-                placeholder="superadmin or client_metablock"
+                placeholder="superadmin or client_smartsoft"
                 required
                 value={loginUsername}
                 onChange={(e) => setLoginUsername(e.target.value)}
@@ -1142,7 +1142,7 @@ function App() {
             <div className="featured-grid-container">
               <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '20px', borderBottom: '1px solid var(--border-color)', paddingBottom: '24px' }}>
                 <div>
-                  <span className="section-tag">MetaBlock Showcase Catalog</span>
+                  <span className="section-tag">SmartSoft Showcase Catalog</span>
                   <h2 style={{ fontSize: '2rem', fontWeight: 800 }}>
                     {searchQuery 
                       ? `Search Results for "${searchQuery}"` 
@@ -1224,40 +1224,39 @@ function App() {
             {/* 1. Dynamic Hero Search section */}
             {(() => {
               const heroSec = (sections || []).find(sec => sec.type === 'hero');
-              const heroTag = heroSec?.metadata?.tag || 'MetaBlock Presentation Portal';
+              const heroTag = heroSec?.metadata?.tag || 'SmartSoft Presentation Portal';
               const heroTitle = heroSec?.title || 'Demonstrating Solutions That Drive Results';
               const heroDesc = heroSec?.subtitle || 'A curated space of live demos and projects, built to showcase how technology solves real business problems.';
-              const heroPlaceholder = heroSec?.metadata?.placeholder || 'e.g. blockchain, game development, eCommerce platform...';
-
+              const heroPlaceholder = heroSec?.metadata?.placeholder || 'e.g. software solutions, mobile apps, eCommerce platform...';
               return (
-                <section className="hero-search-section">
-                  <div className="hero-search-content reveal-up revealed">
-                    <span className="section-tag">{heroTag}</span>
+                <div className="hero-search-section">
+                  <div className="hero-content-wrapper">
+                    <span className="section-tag glow-tag">{heroTag}</span>
                     <h1 className="hero-title">{heroTitle}</h1>
-                    <p className="hero-description">{heroDesc}</p>
+                    <p className="hero-subtitle">{heroDesc}</p>
 
-                    {/* Hero Form Search widget */}
-                    <form onSubmit={(e) => {
-                      e.preventDefault();
-                      const val = e.target.search.value;
-                      if (val.trim()) handleSearch(val.trim());
-                    }} className="search-bar-form">
+                    {/* Integrated Live Search input */}
+                    <div className="hero-search-box glass-card">
+                      <Search className="search-icon" size={20} />
                       <input
                         type="text"
-                        name="search"
-                        className="search-input"
+                        className="hero-search-input"
                         placeholder={heroPlaceholder}
+                        value={searchQuery}
+                        onChange={(e) => handleSearch(e.target.value)}
                       />
-                      <button type="submit" className="search-btn">
-                        <Search size={18} />
-                        <span>Search</span>
-                      </button>
-                    </form>
+                      {searchQuery && (
+                        <button
+                          onClick={() => handleSearch('')}
+                          className="search-clear-btn"
+                          title="Clear search"
+                        >
+                          &times;
+                        </button>
+                      )}
+                    </div>
                   </div>
-
-                  {/* Dynamic Hero Card Stack — real images from backend */}
-                  <HeroCardStack sections={sections} onCardClick={handleOpenDetail} />
-                </section>
+                </div>
               );
             })()}
 
@@ -1276,17 +1275,17 @@ function App() {
         )}
       </main>
 
-      {/* MetaBlock Theme-aligned Footer */}
+      {/* SmartSoft Theme-aligned Footer */}
       <footer className="client-footer">
         <div className="footer-top">
           <div className="footer-desc-column">
             <img 
               src={logoImg} 
-              alt="MetaBlock" 
+              alt="SmartSoft" 
               style={{ height: '42px', width: 'auto', objectFit: 'contain', marginBottom: '16px' }} 
             />
             <p style={{ color: '#94a3b8', fontSize: '0.85rem', lineHeight: '1.6' }}>
-              MetaBlock delivers advanced blockchain, dynamic Web3 templates, and custom React demonstration layers for enterprise administrators. We empower companies to deploy portfolio presentations that wow clients instantly.
+              SmartSoft Technologies delivers advanced software solutions, dynamic web templates, and custom React demonstration layers for enterprise administrators. We empower companies to deploy portfolio presentations that wow clients instantly.
             </p>
           </div>
 
@@ -1318,8 +1317,8 @@ function App() {
         </div>
 
         <div className="footer-bottom">
-          <span>&copy; {new Date().getFullYear()} MetaBlock Technology Development Ltd. All rights reserved.</span>
-          <span>MetaBlock, theme, code, and graphic presentations are properties of MetaBlock Tech.</span>
+          <span>&copy; {new Date().getFullYear()} SmartSoft Technologies. All rights reserved.</span>
+          <span>SmartSoft, theme, code, and graphic presentations are properties of SmartSoft Tech.</span>
         </div>
       </footer>
 

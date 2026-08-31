@@ -292,7 +292,7 @@ const Profile = () => {
               <input
                 type="email"
                 id="email"
-                placeholder="admin@metablock.com"
+                placeholder="admin@smartsoft.com"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 required

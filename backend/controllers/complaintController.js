@@ -4,7 +4,7 @@ const webpush = require('web-push');
 
 // Set VAPID keys
 webpush.setVapidDetails(
-  'mailto:admin@metablock.com',
+  'mailto:admin@smartsoft.com',
   'BKaunp2aYpmPuMm8ODHCx9Pijhj196IXJGnP6PdkLKylX9zUcHFV2QBLuP0SDKuOBaxGQo-s6OY8TyESVUieVWA',
   'Qf8u1SHFs7yt4eU6eHXuLejCkLchpIsR5SBGNTXttd0'
 );

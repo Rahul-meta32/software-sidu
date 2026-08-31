@@ -77,7 +77,7 @@ const DemoSiteSchema = new mongoose.Schema(
     developer: {
       type: String,
       trim: true,
-      default: 'MetaBlock',
+      default: 'SmartSoft',
     },
     apkFile: {
       type: String,

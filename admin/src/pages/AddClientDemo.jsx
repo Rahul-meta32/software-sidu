@@ -451,7 +451,7 @@ const AddClientDemo = () => {
               id="title"
               value={title}
               onChange={(e) => setTitle(e.target.value)}
-              placeholder="E.g., MetaBlock Pharmacy Platform"
+              placeholder="E.g., SmartSoft Pharmacy Platform"
               required
               disabled={submitting}
             />

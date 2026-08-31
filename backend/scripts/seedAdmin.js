@@ -18,7 +18,7 @@ const seedAdmin = async () => {
 
     // Superadmin credentials
     const adminUsername = 'superadmin';
-    const adminEmail = 'admin@metablock.com';
+    const adminEmail = 'admin@smartsoft.com';
     const adminPassword = 'adminpassword123';
 
     // Create Superadmin user

@@ -18,7 +18,7 @@ const isNotificationRelevant = (data, role, email) => {
 
 const Layout = () => {
   const navigate = useNavigate();
-  const [adminEmail, setAdminEmail] = useState(localStorage.getItem('adminEmail') || 'admin@metablock.com');
+  const [adminEmail, setAdminEmail] = useState(localStorage.getItem('adminEmail') || 'admin@smartsoft.com');
   const [adminRole, setAdminRole] = useState(localStorage.getItem('adminRole') || 'agent');
   const [avatarUrl, setAvatarUrl] = useState(localStorage.getItem('adminAvatar') || '');
   const [pendingCount, setPendingCount] = useState(0);
@@ -260,7 +260,7 @@ const Layout = () => {
 
   useEffect(() => {
     const handleStorageChange = () => {
-      setAdminEmail(localStorage.getItem('adminEmail') || 'admin@metablock.com');
+      setAdminEmail(localStorage.getItem('adminEmail') || 'admin@smartsoft.com');
       setAdminRole(localStorage.getItem('adminRole') || 'agent');
       setAvatarUrl(localStorage.getItem('adminAvatar') || '');
     };

@@ -181,7 +181,7 @@ const createDemoSite = async (req, res) => {
       frontendCredentials: parsedFrontendCreds,
       frontendRoleCredentials: parsedRoleCredentials,
       adminCredentials: parsedAdminCreds,
-      developer: req.user ? req.user.username : 'MetaBlock',
+      developer: req.user ? req.user.username : 'SmartSoft',
       isClientDemo: isClientDemo === 'true' || isClientDemo === true ? true : false,
     });
 
@@ -510,7 +510,7 @@ const updateDemoSite = async (req, res) => {
       updateData.adminCredentials = parsedAdminCreds;
     }
     if (developer !== undefined) {
-      updateData.developer = (developer && developer.trim()) ? developer.trim() : 'MetaBlock';
+      updateData.developer = (developer && developer.trim()) ? developer.trim() : 'SmartSoft';
     }
     if (frontendRoleCredentials !== undefined) {
       let parsedRoleCredentials = [];

@@ -25,7 +25,7 @@ const seedHomepage = async () => {
       console.log('Seeding mock Demo Sites first...');
       const mockSites = [
         {
-          title: 'MetaBlock Blockchain Commerce Gateway',
+          title: 'SmartSoft Software Commerce Gateway',
           description: 'A cutting-edge decentralized storefront supporting multichain smart contract wallets, gasless transactions, and dynamic Web3 product tokenization structures.',
           images: [],
           video: null,
@@ -78,7 +78,7 @@ const seedHomepage = async () => {
     // Create default homepage sections
     const defaultSections = [
       {
-        title: 'Professional MetaBlock Themes & Website Templates for any project',
+        title: 'Professional SmartSoft Themes & Website Templates for any project',
         subtitle: 'Discover thousands of easy to customize themes, templates & CMS products, made by world-class developers.',
         type: 'hero',
         order: 1,

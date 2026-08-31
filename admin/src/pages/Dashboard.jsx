@@ -199,13 +199,13 @@ const Dashboard = () => {
     navigate('/add');
   };
 
-  const [adminEmail, setAdminEmail] = useState(localStorage.getItem('adminEmail') || 'admin@metablock.com');
+  const [adminEmail, setAdminEmail] = useState(localStorage.getItem('adminEmail') || 'admin@smartsoft.com');
   const [avatarUrl, setAvatarUrl] = useState(localStorage.getItem('adminAvatar') || '');
   const [adminRole, setAdminRole] = useState(localStorage.getItem('adminRole') || 'agent');
 
   useEffect(() => {
     const handleStorageChange = () => {
-      setAdminEmail(localStorage.getItem('adminEmail') || 'admin@metablock.com');
+      setAdminEmail(localStorage.getItem('adminEmail') || 'admin@smartsoft.com');
       setAvatarUrl(localStorage.getItem('adminAvatar') || '');
       setAdminRole(localStorage.getItem('adminRole') || 'agent');
     };
@@ -284,7 +284,7 @@ const Dashboard = () => {
     const url = URL.createObjectURL(blob);
     const link = document.createElement('a');
     link.setAttribute('href', url);
-    link.setAttribute('download', `metablock_demo_sites_${Date.now()}.csv`);
+    link.setAttribute('download', `smartsoft_demo_sites_${Date.now()}.csv`);
     link.style.visibility = 'hidden';
     document.body.appendChild(link);
     link.click();
@@ -387,7 +387,7 @@ const Dashboard = () => {
       <div className="page-header-wrapper" style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '15px' }}>
         <div className="page-title-section">
           <h2>Websites Console</h2>
-          <p>Control center for managing your MetaBlock portfolio presentations</p>
+          <p>Control center for managing your SmartSoft portfolio presentations</p>
         </div>
 
         {/* Action Buttons */}
@@ -999,7 +999,7 @@ const Dashboard = () => {
                       </td>
                       <td>
                         <span style={{ color: site.developer ? 'var(--text-main)' : 'var(--text-muted)', fontWeight: 600 }}>
-                          {site.developer || 'MetaBlock'}
+                          {site.developer || 'SmartSoft'}
                         </span>
                       </td>
                       <td>

@@ -51,7 +51,7 @@ const Login = () => {
 
   return (
     <div className="login-page-container">
-      {/* Visual Accent Top Bar mimicking the MetaBlock site header */}
+      {/* Visual Accent Top Bar mimicking the SmartSoft site header */}
       <div style={{
         position: 'absolute',
         top: 0,
@@ -65,7 +65,7 @@ const Login = () => {
         <div className="login-header">
           <div className="brand-glow-circle" />
           
-          {/* Custom MetaBlock Logo Image */}
+          {/* Custom SmartSoft Logo Image */}
           <div style={{ display: 'flex', justifyContent: 'center', marginBottom: '20px' }}>
             <img 
               src={logoImg} 
@@ -88,7 +88,7 @@ const Login = () => {
               <input
                 type="text"
                 id="email"
-                placeholder="superadmin or admin@metablock.com"
+                placeholder="superadmin or admin@smartsoft.com"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 required
@@ -125,7 +125,7 @@ const Login = () => {
         </form>
 
         <div className="login-footer">
-          <p>MetaBlock Technology Development Portal</p>
+          <p>SmartSoft Technology Development Portal</p>
         </div>
       </div>
     </div>

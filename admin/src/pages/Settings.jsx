@@ -326,7 +326,7 @@ const UserTab = () => {
             <label style={{ display: 'block', marginBottom: '6px', fontWeight: 600, fontSize: '0.8rem' }}>Username <span style={{ color: 'var(--primary)' }}>*</span></label>
             <input
               type="text"
-              placeholder="e.g. client_metablock"
+              placeholder="e.g. client_smartsoft"
               value={username}
               onChange={(e) => setUsername(e.target.value)}
               required

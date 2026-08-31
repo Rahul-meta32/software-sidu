@@ -107,7 +107,7 @@ const DemoSiteDetailPage = ({ site, onBack, onPreviewClick, onFeedbackClick }) =
         <h1 className="detail-main-title">{site.title}</h1>
         <div className="detail-meta-row">
           <span className="detail-meta-item">
-            <span className="section-tag" style={{ fontSize: '0.7rem', padding: '2px 8px' }}>{site.developer || 'MetaBlock'}</span>
+            <span className="section-tag" style={{ fontSize: '0.7rem', padding: '2px 8px' }}>{site.developer || 'SmartSoft'}</span>
           </span>
           <span className="detail-meta-item">
             <Calendar size={13} />
@@ -292,7 +292,7 @@ const DemoSiteDetailPage = ({ site, onBack, onPreviewClick, onFeedbackClick }) =
               </div>
               <div className="detail-info-row">
                 <span className="detail-info-label">Developer</span>
-                <span className="detail-info-value" style={{ color: 'var(--primary)' }}>{site.developer || 'MetaBlock'}</span>
+                <span className="detail-info-value" style={{ color: 'var(--primary)' }}>{site.developer || 'SmartSoft'}</span>
               </div>
             </div>
 

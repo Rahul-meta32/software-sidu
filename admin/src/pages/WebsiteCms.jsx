@@ -146,7 +146,7 @@ const HeroTab = () => {
         const hero = res.data.find(sec => sec.type === 'hero');
         if (hero) {
           setSectionId(hero._id);
-          setTag(hero.metadata?.tag || 'MetaBlock Presentation Portal');
+          setTag(hero.metadata?.tag || 'SmartSoft Presentation Portal');
           setTitle(hero.title || 'Demonstrating Solutions That Drive Results');
           setSubtitle(hero.subtitle || 'A curated space of live demos and projects, built to showcase how technology solves real business problems.');
           setPlaceholder(hero.metadata?.placeholder || 'e.g. blockchain, game development, eCommerce platform...');
@@ -238,7 +238,7 @@ const HeroTab = () => {
             <label style={{ fontSize: '0.8rem', fontWeight: 700, color: 'var(--text-main)' }}>Section Tag / Category Tag</label>
             <input
               type="text"
-              placeholder="e.g. METABLOCK PRESENTATION PORTAL"
+              placeholder="e.g. SMARTSOFT PRESENTATION PORTAL"
               value={tag}
               onChange={(e) => setTag(e.target.value)}
               required

@@ -20,7 +20,7 @@ const Guide = () => {
             <span>Overview & Purpose</span>
           </h3>
           <p style={{ color: 'var(--text-muted)', lineHeight: '1.6', marginBottom: '20px' }}>
-            Welcome to the MetaBlock admin guide! This page serves as a central registry for instructions on how to operate the Showcase Portal. You can customise this page later with specific documentation, guides, or manuals.
+            Welcome to the SmartSoft admin guide! This page serves as a central registry for instructions on how to operate the Showcase Portal. You can customise this page later with specific documentation, guides, or manuals.
           </p>
 
           <div style={{ display: 'flex', flexDirection: 'column', gap: '15px' }}>

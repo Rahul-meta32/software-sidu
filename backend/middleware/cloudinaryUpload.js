@@ -18,7 +18,7 @@ const uploadLargePromise = (localFilePath, options) => {
   });
 };
 
-const uploadToCloudinary = async (localFilePath, folder = 'demo-metablock') => {
+const uploadToCloudinary = async (localFilePath, folder = 'demo-smartsoft') => {
   try {
     const isVideo = localFilePath.match(/\.(mp4|webm|ogg|mkv|avi)$/i);
     const isApk = localFilePath.match(/\.apk$/i);
@@ -88,7 +88,7 @@ const uploadToCloudinary = async (localFilePath, folder = 'demo-metablock') => {
  * and attach cloudinaryUrl to the file objects.
  */
 const cloudinaryUpload = async (req, res, next) => {
-  const folder = process.env.CLOUDINARY_FOLDER || 'demo-metablock';
+  const folder = process.env.CLOUDINARY_FOLDER || 'demo-smartsoft';
 
   // Handle single file (req.file)
   if (req.file && !req.file.path.match(/\.apk$/i)) {

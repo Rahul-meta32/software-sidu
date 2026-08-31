@@ -7,7 +7,7 @@ import ShowcaseItemCard from './components/ShowcaseItemCard';
 import DemoSiteDetailPage from './components/DemoSiteDetailPage';
 import RequestDemoModal from './components/RequestDemoModal';
 import FeedbackModal from './components/FeedbackModal';
-import { Loader2, Search, Database, Globe, ChevronLeft, ChevronRight, X, ExternalLink, Copy, Check, Download } from 'lucide-react';
+import { Loader2, Search, Database, Globe, ChevronLeft, ChevronRight, X, ExternalLink, Copy, Check, Download, Sparkles } from 'lucide-react';
 import logoImg from './assets/smartsoft.png';
 
 const API_BASE = import.meta.env.VITE_API_URL || 'http://localhost:5050/api';
@@ -1235,26 +1235,38 @@ function App() {
                     <h1 className="hero-title">{heroTitle}</h1>
                     <p className="hero-subtitle">{heroDesc}</p>
 
-                    {/* Integrated Live Search input */}
-                    <div className="hero-search-box glass-card">
-                      <Search className="search-icon" size={20} />
+                    {/* Integrated Premium Live Search input */}
+                    <form 
+                      onSubmit={(e) => e.preventDefault()} 
+                      className="hero-search-container"
+                    >
+                      <div className="hero-search-icon-wrapper">
+                        <Search size={22} className="hero-search-icon" />
+                      </div>
                       <input
                         type="text"
                         className="hero-search-input"
                         placeholder={heroPlaceholder}
                         value={searchQuery}
                         onChange={(e) => handleSearch(e.target.value)}
+                        autoComplete="off"
                       />
-                      {searchQuery && (
+                      {searchQuery ? (
                         <button
+                          type="button"
                           onClick={() => handleSearch('')}
-                          className="search-clear-btn"
+                          className="hero-search-clear-btn"
                           title="Clear search"
                         >
                           &times;
                         </button>
+                      ) : (
+                        <button type="submit" className="hero-search-submit-btn">
+                          <span>Search</span>
+                          <Sparkles size={16} />
+                        </button>
                       )}
-                    </div>
+                    </form>
                   </div>
                 </div>
               );

@@ -353,6 +353,113 @@ header {
   box-shadow: 0 0 15px rgba(0, 102, 255, 0.4);
 }
 
+/* Premium Glassmorphic Hero Search Bar */
+.hero-search-container {
+  display: flex;
+  align-items: center;
+  position: relative;
+  max-width: 680px;
+  width: 100%;
+  background: rgba(255, 255, 255, 0.96);
+  border: 2px solid rgba(0, 102, 255, 0.2);
+  border-radius: 60px;
+  padding: 8px 10px 8px 20px;
+  box-shadow: 0 14px 40px rgba(0, 102, 255, 0.12), 
+              0 2px 10px rgba(15, 23, 42, 0.04);
+  backdrop-filter: blur(20px);
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  margin-top: 15px;
+}
+
+.hero-search-container:hover {
+  border-color: rgba(0, 102, 255, 0.45);
+  box-shadow: 0 18px 50px rgba(0, 102, 255, 0.18),
+              0 4px 15px rgba(15, 23, 42, 0.06);
+  transform: translateY(-2px);
+}
+
+.hero-search-container:focus-within {
+  border-color: #0066ff;
+  box-shadow: 0 0 0 4px rgba(0, 102, 255, 0.18),
+              0 22px 55px rgba(0, 102, 255, 0.22);
+  background: #ffffff;
+  transform: translateY(-2px);
+}
+
+.hero-search-icon-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #0066ff;
+  margin-right: 12px;
+  transition: transform 0.3s ease;
+}
+
+.hero-search-container:focus-within .hero-search-icon-wrapper {
+  transform: scale(1.1);
+  color: #0052cc;
+}
+
+.hero-search-input {
+  flex: 1;
+  background: transparent;
+  border: none;
+  outline: none;
+  font-size: 1.05rem;
+  font-weight: 500;
+  color: #0f172a;
+  padding: 10px 0;
+  font-family: inherit;
+}
+
+.hero-search-input::placeholder {
+  color: #94a3b8;
+  font-weight: 400;
+}
+
+.hero-search-submit-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: linear-gradient(135deg, #0066ff 0%, #0044cc 100%);
+  color: #ffffff;
+  border: none;
+  border-radius: 50px;
+  padding: 12px 26px;
+  font-size: 0.95rem;
+  font-weight: 700;
+  cursor: pointer;
+  box-shadow: 0 4px 15px rgba(0, 102, 255, 0.35);
+  transition: all 0.25s ease;
+}
+
+.hero-search-submit-btn:hover {
+  background: linear-gradient(135deg, #0052cc 0%, #0033a0 100%);
+  transform: scale(1.03);
+  box-shadow: 0 6px 20px rgba(0, 102, 255, 0.5);
+}
+
+.hero-search-clear-btn {
+  background: rgba(239, 68, 68, 0.1);
+  color: #ef4444;
+  border: 1px solid rgba(239, 68, 68, 0.2);
+  border-radius: 50%;
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.3rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.hero-search-clear-btn:hover {
+  background: #ef4444;
+  color: #ffffff;
+  transform: scale(1.1);
+}
+
 .hero-right-visual {
   width: 450px;
   height: 300px;

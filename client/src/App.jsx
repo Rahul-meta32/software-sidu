@@ -1311,8 +1311,8 @@ function App() {
           <div className="footer-links-column">
             <h4 className="footer-column-title">Official Site</h4>
             <a href="#" className="footer-link">Schedule Google Meet</a>
-            <a href="#" className="footer-link">WhatsApp Live Chat</a>
-            <a href="tel:+919358593003" className="footer-link">Call +91-93585-93003</a>
+            <a href="https://wa.me/919950580743" target="_blank" rel="noopener noreferrer" className="footer-link">WhatsApp Live Chat</a>
+            <a href="tel:+919950580743" className="footer-link">Call +91-99505-80743</a>
           </div>
         </div>
 

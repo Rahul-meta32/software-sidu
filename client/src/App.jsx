@@ -7,6 +7,7 @@ import ShowcaseItemCard from './components/ShowcaseItemCard';
 import DemoSiteDetailPage from './components/DemoSiteDetailPage';
 import RequestDemoModal from './components/RequestDemoModal';
 import FeedbackModal from './components/FeedbackModal';
+import BankDetailsPage from './components/BankDetailsPage';
 import { Loader2, Search, Database, Globe, ChevronLeft, ChevronRight, X, ExternalLink, Copy, Check, Download, Sparkles } from 'lucide-react';
 import logoImg from './assets/smartsoft.png';
 
@@ -338,6 +339,7 @@ function App() {
   const [categoryTree, setCategoryTree] = useState([]);
   const [showAllProducts, setShowAllProducts] = useState(false);
   const [showClientDemos, setShowClientDemos] = useState(false);
+  const [showBankDetails, setShowBankDetails] = useState(false);
 
   // Detail page state
   const [selectedSite, setSelectedSite] = useState(null);
@@ -713,6 +715,7 @@ function App() {
       const { path, params } = parseHash();
 
       if (path.startsWith('#/demo/')) {
+        setShowBankDetails(false);
         const id = path.replace('#/demo/', '');
         if (!selectedSite || selectedSite._id !== id) {
           setLoading(true);
@@ -734,7 +737,17 @@ function App() {
       } else {
         setSelectedSite(null);
 
-        if (path === '#/client-demos') {
+        if (path === '#/bank-details') {
+          setShowBankDetails(true);
+          setShowClientDemos(false);
+          setShowAllProducts(false);
+          setSearchQuery('');
+          setActiveCategory('');
+          setActiveSubcategory('All Items');
+          setLoading(false);
+          window.scrollTo({ top: 0, behavior: 'smooth' });
+        } else if (path === '#/client-demos') {
+          setShowBankDetails(false);
           const p = parseInt(params.page) || 1;
           setShowClientDemos(true);
           setShowAllProducts(false);
@@ -744,6 +757,7 @@ function App() {
           setPage(p);
           fetchClientDemos(p);
         } else if (path === '#/products') {
+          setShowBankDetails(false);
           const p = parseInt(params.page) || 1;
           setShowClientDemos(false);
           setShowAllProducts(true);
@@ -753,6 +767,7 @@ function App() {
           setPage(p);
           fetchFilteredItems('', 'All Items', 'All Items', p);
         } else if (path === '#/search') {
+          setShowBankDetails(false);
           const q = params.q || '';
           const p = parseInt(params.page) || 1;
           setShowClientDemos(false);
@@ -763,6 +778,7 @@ function App() {
           setPage(p);
           fetchFilteredItems(q, '', 'All Items', p);
         } else if (path === '#/category') {
+          setShowBankDetails(false);
           const cat = params.name || '';
           const p = parseInt(params.page) || 1;
           setShowClientDemos(false);
@@ -774,6 +790,7 @@ function App() {
           fetchFilteredItems('', cat, cat, p);
         } else {
           // Home '#/'
+          setShowBankDetails(false);
           setShowClientDemos(false);
           setShowAllProducts(false);
           setSearchQuery('');
@@ -1116,6 +1133,8 @@ function App() {
             onPreviewClick={setModalSite} 
             onFeedbackClick={handleRegisterFeedback}
           />
+        ) : showBankDetails ? (
+          <BankDetailsPage onBack={handleResetFilters} />
         ) : loading ? (
           <div className="spinner-wrapper">
             <Loader2 className="spinner" size={48} />
@@ -1324,6 +1343,24 @@ function App() {
             <h4 className="footer-column-title">Official Site</h4>
             <a href="#" className="footer-link">Schedule Google Meet</a>
             <a href="https://wa.me/919950580743" target="_blank" rel="noopener noreferrer" className="footer-link">WhatsApp Live Chat</a>
+            <a 
+              href="#/bank-details" 
+              className="footer-link"
+              onClick={(e) => {
+                e.preventDefault();
+                setSelectedSite(null);
+                setShowBankDetails(true);
+                setShowClientDemos(false);
+                setShowAllProducts(false);
+                setSearchQuery('');
+                setActiveCategory('');
+                setActiveSubcategory('All Items');
+                window.location.hash = '#/bank-details';
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+              }}
+            >
+              Bank Details
+            </a>
             <a href="tel:+919950580743" className="footer-link">Call +91-99505-80743</a>
           </div>
         </div>

@@ -3,7 +3,7 @@ import { NavLink, Outlet, useNavigate } from 'react-router-dom';
 import { authService } from '../api/demoSiteService';
 import { db } from '../api/firebase';
 import { doc, setDoc, collection, query, where, onSnapshot } from 'firebase/firestore';
-import { LayoutDashboard, PlusCircle, LogOut, Layers, Tag, Server, HelpCircle, Bell, Grid, Image, UserPlus, Users, Star, Layout as LayoutIcon, ClipboardList, Sliders, Settings as SettingsIcon, Code } from 'lucide-react';
+import { LayoutDashboard, PlusCircle, LogOut, Layers, Tag, Server, HelpCircle, Bell, Grid, Image, UserPlus, Users, Star, Layout as LayoutIcon, ClipboardList, Sliders, Settings as SettingsIcon, Code, Landmark } from 'lucide-react';
 import logoImg from '../assets/smartsoft.png';
 
 const isNotificationRelevant = (data, role, email) => {
@@ -400,6 +400,19 @@ const Layout = () => {
                   )}
                 </NavLink>
               </li>
+              {adminRole === 'superadmin' && (
+                <li>
+                  <NavLink
+                    to="/bank-details"
+                    className={({ isActive }) =>
+                      `menu-item-link ${isActive ? 'active' : ''}`
+                    }
+                  >
+                    <Landmark size={20} />
+                    <span>Bank Details</span>
+                  </NavLink>
+                </li>
+              )}
               <li>
                 <NavLink
                   to="/settings"

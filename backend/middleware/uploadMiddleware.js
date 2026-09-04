@@ -20,7 +20,7 @@ const storage = multer.diskStorage({
 });
 
 const fileFilter = (req, file, cb) => {
-  if (file.fieldname === 'images' || file.fieldname === 'profileImage' || file.fieldname === 'image') {
+  if (file.fieldname === 'images' || file.fieldname === 'profileImage' || file.fieldname === 'image' || file.fieldname === 'qrCode') {
     // Check image mime types
     const allowedImageTypes = /jpeg|jpg|png|webp|gif/;
     const extname = allowedImageTypes.test(path.extname(file.originalname).toLowerCase());
@@ -105,11 +105,15 @@ const uploadDocFile = upload.single('docFile');
 // Single APK file upload
 const uploadSingleApkFile = upload.single('apkFile');
 
+// Single QR code image upload
+const uploadQrCodeFile = upload.single('qrCode');
+
 module.exports = { 
   uploadDemoSiteFiles, 
   uploadAdminProfileImage, 
   uploadCategoryImageFile, 
   uploadDocFile,
-  uploadSingleApkFile
+  uploadSingleApkFile,
+  uploadQrCodeFile
 };
 

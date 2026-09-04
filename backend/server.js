@@ -33,9 +33,13 @@ const serverCategoryRoutes = require('./routes/serverCategoryRoutes');
 const complaintRoutes = require('./routes/complaintRoutes');
 const demoRequestRoutes = require('./routes/demoRequestRoutes');
 const scriptSiteRoutes = require('./routes/scriptSiteRoutes');
+const bankDetailRoutes = require('./routes/bankDetailRoutes');
+const publicBankDetailRoutes = require('./routes/publicBankDetailRoutes');
 
 // Mount Routes
 app.use('/api/admin', authRoutes); // Exposes POST /api/admin/login
+app.use('/api/admin/bank-details', bankDetailRoutes); // Exposes Bank Details CRUD (Superadmin Only)
+app.use('/api/bank-details', publicBankDetailRoutes); // Exposes Safe Public Read-only Bank Details
 app.use('/api', demoSiteRoutes);     // Exposes POST /api/admin/demo-sites, GET /api/demo-sites, etc.
 app.use('/api', categoryRoutes);     // Exposes GET /api/categories, POST /api/admin/categories, etc.
 app.use('/api', serverCategoryRoutes); // Exposes GET /api/server-categories, etc.

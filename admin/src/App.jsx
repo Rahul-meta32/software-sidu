@@ -13,6 +13,7 @@ import Settings from './pages/Settings';
 import WebsiteCms from './pages/WebsiteCms';
 import ScriptSites from './pages/ScriptSites';
 import DemoRequests from './pages/DemoRequests';
+import BankDetails from './pages/BankDetails';
 import Layout from './components/Layout';
 import ProtectedRoute from './components/ProtectedRoute';
 
@@ -78,6 +79,16 @@ function App() {
 
           {/* Demo Requests Route */}
           <Route path="demo-requests" element={<DemoRequests />} />
+
+          {/* Bank Details Route (Super Admin Only) */}
+          <Route
+            path="bank-details"
+            element={
+              <SuperadminOnlyRoute>
+                <BankDetails />
+              </SuperadminOnlyRoute>
+            }
+          />
           
           {/* Layout Catch-all */}
           <Route path="*" element={<Navigate to="/" replace />} />
